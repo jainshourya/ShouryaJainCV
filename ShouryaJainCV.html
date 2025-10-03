@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shourya Jain - Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #00f5d4;
+  --secondary: #ff4d6d;
+  --accent: #ffe66d;
+  --bg1: #0f2027;
+  --bg2: #203a43;
+  --bg3: #2c5364;
+  --text-light: #f1f1f1;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3));
+  background-size: 400% 400%;
+  animation: bgShift 15s ease infinite;
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255,255,255,0.15) 2px, transparent 2px);
+  background-size: 50px 50px;
+  animation: moveDots 20s linear infinite;
+  z-index: 0;
+}
+@keyframes moveDots {
+  from { background-position: 0 0; }
+  to { background-position: 100px 100px; }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 950px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 1s ease forwards;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contact {
+  text-align: center;
+  margin: 10px 0 40px;
+  font-size: 0.95em;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease forwards;
+}
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+  position: relative;
+}
+.contact a:hover {
+  color: var(--primary);
+}
+
+.section {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+.section.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.section-title {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+ul { padding-left: 20px; }
+li { margin-bottom: 8px; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+tr:hover {
+  background: rgba(255,255,255,0.05);
+  transition: background 0.3s ease;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.85em;
+  color: #aaa;
+  margin-top: 40px;
+}
+
+.section ul li a {
+  color: var(--accent);
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 2px 4px;
+}
+
+.section ul li strong a {
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  position: relative;
+}
+
+.section ul li strong a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section ul li strong a:hover::before {
+  width: 100%;
+}
+
+.section ul li strong a:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Shourya Jain</h1>
+    <div class="contact">
+      <p><strong>DOB:</strong> 20th May 2007 | <strong>Nationality:</strong> Indian</p>
+      <p><strong>Email:</strong> shouryashourya2020@gmail.com | <strong>Phone:</strong> 9915129317</p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shouryajain2007/">Shourya Jain</a> | <strong>GitHub:</strong> <a href="https://github.com/jainshourya">jainshourya</a></p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Objective</h2>
+      <p>Aspiring Computer Science student with a strong academic background and passion for software, programming, and technology. Eager to develop skills in software engineering and AI through top-tier university education.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Academic Qualifications</h2>
+      <table>
+        <tr><th>Qualification</th><th>Institution</th><th>Year</th><th>Percentage</th></tr>
+        <tr><td>Class 12 (Non-Medical – CBSE)</td><td>Delhi Public School</td><td>2025</td><td>96.6%</td></tr>
+        <tr><td>Class 10 (CBSE)</td><td>GD Goenka Public School</td><td>2023</td><td>96%</td></tr>
+        <tr><td>JEE Mains</td><td>-</td><td>2025</td><td>95.6 Percentile</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Standardized Test Scores</h2>
+      <ul>
+        <li><span style="color: var(--secondary)">SAT:</span> 1390 / 1600</li>
+        <li><span style="color: var(--secondary)">IELTS:</span> 7.5 Overall</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <ul>
+        <li>Programming Languages: Python, HTML, CSS, JavaScript</li>
+        <li>Tools & Platforms: VS Code, GitHub, Netbeans, MS Office</li>
+        <li>Interests: Software Development, AI, Web Development</li>
+        <li>Supervised Machine Learning: Regression and Classification (Coursera)</li>
+        <li>Advanced Learning Algorithms (Coursera)</li>
+        <li>Typing Speed: 120 WPM</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Projects & Activities</h2>
+      <ul>
+        <li><strong><a href="https://globetales123.netlify.app/" target="_blank">GlobeTales</a></strong> – Explore a country's profile, featuring its flag, currency, region, population size, currency, and a random historical fact.</li>
+        <li><strong><a href="https://spacelinked123.netlify.app/" target="_blank">SpaceLinked</a></strong> – Shows real time space information, including current location of ISS, and brief description of astronauts in space at the moment.</li>
+        <li><strong><a href="https://ochem.netlify.app/" target="_blank">OChem</a></strong> – Organic Compound Namer (The only truly free Organic Compound Namer available online)</li>
+        <li><strong><a href="https://worldwire123.netlify.app/" target="_blank">WorldWire</a></strong> – Get real time news, categorized on the basis of countries. Click on a country to obtain its latest headlines</li>
+        <li><strong>Radar</strong> – Small radar capable of detecting the distance of an object. Presented in school's science fest</li>
+        <li>Member of school coding club and participant in tech events</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Achievements</h2>
+      <ul>
+        <li>Academic Excellence Award (Class 10 & 12)</li>
+        <li>JEE Mains 2025: 95.6 Percentile</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Extracurricular Activities</h2>
+      <ul>
+        <li>SpellQuest: State Level Silver Medal</li>
+        <li>Chess: Intermediate, school club member</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Leadership & Participation</h2>
+      <ul>
+        <li>Science Project Judge for Mission Deep Educational Trust</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Languages Known</h2>
+      <ul>
+        <li>English (Fluent)</li>
+        <li>Hindi (Native)</li>
+        <li>Punjabi (Native)</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>© 2025 Shourya Jain. All rights reserved.</p>
+    </div>
+  </div>
+
+<script>
+const sections = document.querySelectorAll('.section');
+function revealOnScroll() {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      sec.classList.add('show');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+</script>
+</body>
+</html>
