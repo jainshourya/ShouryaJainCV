@@ -91,6 +91,32 @@ h1 {
   color: var(--primary);
 }
 
+.download-cv-btn {
+  display: block;
+  margin: 30px auto;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 245, 212, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.download-cv-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 245, 212, 0.5);
+}
+
+.download-cv-btn:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
 .section {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
@@ -173,6 +199,82 @@ tr:hover {
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.project-item {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.project-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateX(10px);
+  border-color: var(--primary);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-title {
+  font-size: 1.2em;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.project-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.visit-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, var(--secondary), #ff6b85);
+  color: white;
+}
+
+.visit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(255, 77, 109, 0.4);
+}
+
+.project-description {
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .project-buttons {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -183,6 +285,8 @@ tr:hover {
       <p><strong>Email:</strong> shouryashourya2020@gmail.com | <strong>Phone:</strong> 9915129317</p>
       <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shouryajain2007/">Shourya Jain</a> | <strong>GitHub:</strong> <a href="https://github.com/jainshourya">jainshourya</a></p>
     </div>
+
+    <button class="download-cv-btn" onclick="downloadCV()">📄 Download CV</button>
 
     <div class="section">
       <h2 class="section-title">Objective</h2>
@@ -221,11 +325,56 @@ tr:hover {
 
     <div class="section">
       <h2 class="section-title">Projects & Activities</h2>
-      <ul>
-        <li><strong><a href="https://globetales123.netlify.app/" target="_blank">GlobeTales</a></strong> – Explore a country's profile, featuring its flag, currency, region, population size, currency, and a random historical fact.</li>
-        <li><strong><a href="https://spacelinked123.netlify.app/" target="_blank">SpaceLinked</a></strong> – Shows real time space information, including current location of ISS, and brief description of astronauts in space at the moment.</li>
-        <li><strong><a href="https://ochem.netlify.app/" target="_blank">OChem</a></strong> – Organic Compound Namer (The only truly free Organic Compound Namer available online)</li>
-        <li><strong><a href="https://worldwire123.netlify.app/" target="_blank">WorldWire</a></strong> – Get real time news, categorized on the basis of countries. Click on a country to obtain its latest headlines</li>
+      
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title">🌍 GlobeTales</div>
+          <div class="project-buttons">
+            <button class="visit-btn" onclick="window.open('https://globetales123.netlify.app/', '_blank')">🔗 Visit</button>
+          </div>
+        </div>
+        <div class="project-description">
+          Explore a country's profile, featuring its flag, currency, region, population size, currency, and a random historical fact.
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title">🚀 SpaceLinked</div>
+          <div class="project-buttons">
+            <button class="visit-btn" onclick="window.open('https://spacelinked123.netlify.app/', '_blank')">🔗 Visit</button>
+          </div>
+        </div>
+        <div class="project-description">
+          Shows real time space information, including current location of ISS, and brief description of astronauts in space at the moment.
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title">🧪 OChem</div>
+          <div class="project-buttons">
+            <button class="visit-btn" onclick="window.open('https://ochem.netlify.app/', '_blank')">🔗 Visit</button>
+          </div>
+        </div>
+        <div class="project-description">
+          Organic Compound Namer (The only truly free Organic Compound Namer available online)
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <div class="project-title">📰 WorldWire</div>
+          <div class="project-buttons">
+            <button class="visit-btn" onclick="window.open('https://worldwire123.netlify.app/', '_blank')">🔗 Visit</button>
+          </div>
+        </div>
+        <div class="project-description">
+          Get real time news, categorized on the basis of countries. Click on a country to obtain its latest headlines
+        </div>
+      </div>
+
+      <ul style="margin-top: 20px;">
         <li><strong>Radar</strong> – Small radar capable of detecting the distance of an object. Presented in school's science fest</li>
         <li>Member of school coding club and participant in tech events</li>
       </ul>
@@ -280,6 +429,26 @@ function revealOnScroll() {
 }
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();
+
+function downloadCV() {
+    // Create a link element
+    const link = document.createElement('a');
+    
+    // Set the href to your PDF file path
+    link.href = './assets/Shourya_Jain_CV.pdf';  // Update this path to your PDF location
+    
+    // Set download attribute with desired filename
+    link.download = 'Shourya_Jain_CV.pdf';
+    
+    // Append link to document
+    document.body.appendChild(link);
+    
+    // Trigger click event
+    link.click();
+    
+    // Remove link from document
+    document.body.removeChild(link);
+}
 </script>
 </body>
 </html>
